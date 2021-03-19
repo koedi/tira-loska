@@ -4,7 +4,7 @@ Maze creation project done in Java
 
 ## Documentation
 
-[Project definition]()
+[Project definition](https://github.com/koedi/tira-loska/blob/main/documentation/definition.md)
 []()
 []()
 []()
