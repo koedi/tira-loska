@@ -1,5 +1,6 @@
-# tira-loska
-Tiralabra kevät 2021 IV
+# loska
+
+Maze creation project done in Java
 
 ## Documentation
 
