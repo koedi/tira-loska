@@ -1,6 +1,8 @@
-# Project definition - IN PROGRESS
+# Project definition
 
 Target for the project is to implement two different maze creation algorithms. The algorithms I have chosen are Binary Tree and Depth First Search. Binary tree was chosen as it was my first thought how to generate mazes and to depict them. DFS came about after searching on the topic.
+
+Project is implemented using Java.
 
 ## Binary tree
 
@@ -29,4 +31,4 @@ Time complexity for DFS is O(n), where n is the number of cells. E.g. in a maze 
 
     Opinto-ohjelma johon kuulun: tietojenkäsittelytieteen kandidaatti (TKT)
 
-Projektin dokumentaatiossa käytetty kieli: englanti´´´
+    Projektin dokumentaatiossa käytetty kieli: englanti
