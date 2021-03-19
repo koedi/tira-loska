@@ -1,4 +1,4 @@
-# Project definition
+# Project definition - IN PROGRESS
 
 This is definition documentation for TIRAlabra 2021 IV.
 
