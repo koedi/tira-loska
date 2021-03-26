@@ -14,4 +14,5 @@ Maze creation project done in Java
 ## Weekly reports
 
 [Week 1](https://github.com/koedi/tira-loska/blob/main/documentation/week1.md)
+
 [Week 2](https://github.com/koedi/tira-loska/blob/main/documentation/week2.md)
