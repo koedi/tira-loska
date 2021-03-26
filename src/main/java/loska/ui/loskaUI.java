@@ -1,8 +1,9 @@
 package loska.ui;
 
+import loska.domain.*;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
-
 
 /**
  * Main UI class
@@ -22,11 +23,14 @@ import javafx.stage.Stage;
      @Override
     public void start(Stage stage) {
  
- 
- 
+        Maze m = new Maze(7,7);  
+        BinaryTree bt = new BinaryTree(m);
+        bt.generate();
+        
+        System.out.print(bt);
 
         // display first screen
-        stage.show();
+        //stage.show();
  
     }
 
