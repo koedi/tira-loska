@@ -37,9 +37,9 @@ public class Maze {
     /**
      * Adds wall to direction d (0=north, 1=west) from coordinate(h,w)
      */
-    public void addWall(int h, int w, int d) {
+    public void addPath(int h, int w, int d) {
  
-        System.out.printf("%d %d %d\n", h, w, d);
+        //System.out.printf("%d %d %d\n", h, w, d);
 
         if (d == 0) {
             checkNorth(h, w);
@@ -49,27 +49,23 @@ public class Maze {
     }
 
     public void checkNorth(int h, int w) {
-        //If at top row, only possible direction is west
-        if (h == 0) {
+        if (h == 0 && w == 0) {      //If first cell
+            this.cells[h][w] = 0;
+        } else if (h == 0) {         //If at top row, only possible direction is west
             checkWest(h, w);
+        } else {
+            this.cells[h - 1][w] = 0;
         }
-
     }
 
     public void checkWest(int h, int w) {
-        //If at top row, west is only option
-        if (h == 0) {
+        if (h == 0 && w == 0) {     //If first cell
             this.cells[h][w] = 0;
-            return;
-        }
-
-        if (w > 0) {
+        } else if (w == 0) {        //If at left column, only possible direction is north
+            checkNorth(h, w);
+        } else {
             this.cells[h][w - 1] = 0;
         }
-
-
-
-
     }
 
 
@@ -87,7 +83,4 @@ public class Maze {
 
         return sb.toString();
     }
-
-
-
 }

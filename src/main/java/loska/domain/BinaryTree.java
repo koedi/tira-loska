@@ -13,14 +13,14 @@ public class BinaryTree {
     /**
      * Binary tree maze is created in three steps
      * 1) For each cell in the grid
-     * 2) Get, if they exist, north or east neighbour
-     * 3) Toss a coin to connect with one of them 
+     * 2) Select direction randomly (north / west)
+     * 3) Connect with cell in selected directions 
      */
     public void generate() {
         for (int h = 0; h < maze.getHeight(); h++) {
             for (int w = 0; w < maze.getWidth(); w++) {
                 int rnd = (int) (System.nanoTime() % 2);
-                maze.addWall(h, w, rnd);
+                maze.addPath(h, w, rnd);
             }
         }
 
