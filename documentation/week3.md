@@ -8,6 +8,7 @@ Week started (on Saturday) with implementing testing framework using GitHub Acti
 - [ ] JUnit
 - [ ] Codecov
 
+Then continued with implementation of Binary Tree. 
 
 
 
@@ -21,4 +22,5 @@ Week started (on Saturday) with implementing testing framework using GitHub Acti
 |------|--------------|
 | GH Actions | 1 |
 | Checkstyle | 0.5 |
-| Total | 1.5 |
+| Binary tree | 1 |
+| Total | 2.5 |
