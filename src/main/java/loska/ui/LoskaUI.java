@@ -9,7 +9,7 @@ import javafx.stage.Stage;
  * Main UI class
  */
 
- public class loskaUI extends Application {
+public class LoskaUI extends Application {
     
     public static void main(String[] args) {
         launch(args);
@@ -20,10 +20,10 @@ import javafx.stage.Stage;
      * UI creation and all elements.
      */
     
-     @Override
+    @Override
     public void start(Stage stage) {
  
-        Maze m = new Maze(7,7);  
+        Maze m = new Maze(7, 7);  
         BinaryTree bt = new BinaryTree(m);
         bt.generate();
         
@@ -33,8 +33,4 @@ import javafx.stage.Stage;
         //stage.show();
  
     }
-
-
-
-
 }

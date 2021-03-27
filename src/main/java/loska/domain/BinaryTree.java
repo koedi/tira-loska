@@ -17,9 +17,9 @@ public class BinaryTree {
      * 3) Toss a coin to connect with one of them 
      */
     public void generate() {
-        for (int h=0; h < maze.getHeight(); h++) {
-            for (int w=0; w < maze.getWidth(); w++) {
-                int rnd = (int)(System.nanoTime() % 2);
+        for (int h = 0; h < maze.getHeight(); h++) {
+            for (int w = 0; w < maze.getWidth(); w++) {
+                int rnd = (int) (System.nanoTime() % 2);
                 maze.addWall(h, w, rnd);
             }
         }

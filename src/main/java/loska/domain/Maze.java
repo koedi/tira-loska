@@ -16,8 +16,8 @@ public class Maze {
         this.width  = width;
         this.cells = new int[height][width];
 
-        for (int h=0; h<height; h++) {
-            for (int w=0; w<width; w++) {
+        for (int h = 0; h < height; h++) {
+            for (int w = 0; w < width; w++) {
                 this.cells[h][w] = 1;
             }
         }
@@ -39,31 +39,32 @@ public class Maze {
      */
     public void addWall(int h, int w, int d) {
  
-        System.out.printf("%d %d %d\n", h,w,d);
+        System.out.printf("%d %d %d\n", h, w, d);
 
-        if (d==0) {
-            checkNorth(h,w);
+        if (d == 0) {
+            checkNorth(h, w);
         } else {
-            checkWest(h,w);
+            checkWest(h, w);
         }
     }
 
     public void checkNorth(int h, int w) {
         //If at top row, only possible direction is west
         if (h == 0) {
-            checkWest(h,w);
+            checkWest(h, w);
         }
+
     }
 
     public void checkWest(int h, int w) {
         //If at top row, west is only option
-        if (h==0) {
+        if (h == 0) {
             this.cells[h][w] = 0;
             return;
         }
 
-        if (w>0) {
-            this.cells[h][w-1] = 0;
+        if (w > 0) {
+            this.cells[h][w - 1] = 0;
         }
 
 
@@ -77,8 +78,8 @@ public class Maze {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        for (int h=0; h<height; h++) {
-            for (int w=0; w<width; w++) {
+        for (int h = 0; h < height; h++) {
+            for (int w = 0; w < width; w++) {
                 sb.append(this.cells[h][w]);
             }
             sb.append("\n");
