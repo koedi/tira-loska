@@ -2,6 +2,9 @@
 
 Maze creation project done in Java
 
+![GitHub actions](https://github.com/koedi/tira-loska/workflows/Java%20CI%20with%20Gradle/badge.svg)
+
+
 ## Documentation
 
 [Project definition](https://github.com/koedi/tira-loska/blob/main/documentation/definition.md)
