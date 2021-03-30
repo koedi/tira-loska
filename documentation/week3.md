@@ -5,10 +5,10 @@
 Week started (on Saturday) with implementing testing framework using GitHub Actions
 ### Test actions implemented:
 - [x] Checkstyle
-- [ ] JUnit
+- [x] JUnit
 - [ ] Codecov
 
-Then continued with implementation of Binary Tree. 
+First working version of BinaryTree maze generator done. Produces text based maze.
 
 
 
@@ -22,5 +22,6 @@ Then continued with implementation of Binary Tree.
 |------|--------------|
 | GH Actions | 1 |
 | Checkstyle | 0.5 |
-| Binary tree | 1 |
-| Total | 2.5 |
+| JUnit | 0.5 |
+| Binary tree | 1+2 |
+| Total | 4 |
