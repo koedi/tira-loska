@@ -17,14 +17,13 @@ public class BinaryTree {
      * 3) Connect with cell in selected directions 
      */
     public void generate() {
-        for (int h = 0; h < maze.getHeight(); h++) {
-            for (int w = 0; w < maze.getWidth(); w++) {
+        for (int h = 0; h < maze.getHeight() / 2; h++) {
+            for (int w = 0; w < maze.getWidth() / 2; w++) {
                 int rnd = (int) (System.nanoTime() % 2);
-                maze.addPath(h, w, rnd);
+                //System.out.printf("D: %d (%d,%d)\n", rnd, h, w);
+                maze.addPath(2 * h + 1, 2 * w + 1, rnd);
             }
         }
-
-
     }
 
 

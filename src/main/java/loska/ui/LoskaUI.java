@@ -23,7 +23,7 @@ public class LoskaUI extends Application {
     @Override
     public void start(Stage stage) {
  
-        Maze m = new Maze(7, 7);  
+        Maze m = new Maze(10, 10);  
         BinaryTree bt = new BinaryTree(m);
         bt.generate();
         
@@ -31,6 +31,6 @@ public class LoskaUI extends Application {
 
         // display first screen
         //stage.show();
- 
+        System.exit(0);
     }
 }

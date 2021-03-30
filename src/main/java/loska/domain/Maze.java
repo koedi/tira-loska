@@ -2,9 +2,22 @@ package loska.domain;
 
 
 public class Maze {
-    private int[][] cells;
+    private char[][] cells;
     private int height;
     private int width;
+
+    /**
+     * Maze constructor.
+     * @param height, @param width. Walls are inserted around and between, hence size is (2n+1)x(2n+1)
+     * 
+     * For example 3x3 increases to 7x7
+     * #######
+     * #@....#
+     * ###.#.#
+     * #...#!#
+     * #######
+     */
+
 
     public Maze(int height, int width) {
 
@@ -12,13 +25,13 @@ public class Maze {
             throw new IllegalArgumentException("Invalid height or width");
         }
 
-        this.height = height;
-        this.width  = width;
-        this.cells = new int[height][width];
+        this.height = 2 * height + 1;
+        this.width  = 2 * width + 1;
+        this.cells = new char[this.height][this.width];
 
-        for (int h = 0; h < height; h++) {
-            for (int w = 0; w < width; w++) {
-                this.cells[h][w] = 1;
+        for (int h = 0; h < this.height; h++) {
+            for (int w = 0; w < this.width; w++) {
+                this.cells[h][w] = '#';
             }
         }
     }
@@ -35,7 +48,7 @@ public class Maze {
     }
 
     /**
-     * Adds wall to direction d (0=north, 1=west) from coordinate(h,w)
+     * Adds path to direction d (0=north, 1=west) from coordinate(h,w)
      */
     public void addPath(int h, int w, int d) {
  
@@ -49,22 +62,29 @@ public class Maze {
     }
 
     public void checkNorth(int h, int w) {
-        if (h == 0 && w == 0) {      //If first cell
-            this.cells[h][w] = 0;
-        } else if (h == 0) {         //If at top row, only possible direction is west
+        if (h == 1 && w == 1) {      //If first cell
+            this.cells[h][w] = '@';
+        } else if (h == 1) {         //If at top row, only possible direction is west
             checkWest(h, w);
+        } else if ((h == this.height - 2) && (w == this.width - 2)) {
+            this.cells[h][w] = '!';
+            this.cells[h - 1][w] = '.';
         } else {
-            this.cells[h - 1][w] = 0;
+            this.cells[h][w] = '.';
+            this.cells[h - 1][w] = '.';
         }
     }
 
     public void checkWest(int h, int w) {
-        if (h == 0 && w == 0) {     //If first cell
-            this.cells[h][w] = 0;
-        } else if (w == 0) {        //If at left column, only possible direction is north
+        if (h == 1 && w == 1) {     //If first cell
+            this.cells[h][w] = '@';
+        } else if ((h == this.height) && (w == this.width)) {
+            this.cells[h][w] = '!';
+        } else if (w == 1) {        //If at left column, only possible direction is north
             checkNorth(h, w);
         } else {
-            this.cells[h][w - 1] = 0;
+            this.cells[h][w] = '.';
+            this.cells[h][w - 1] = '.';
         }
     }
 
@@ -74,8 +94,8 @@ public class Maze {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        for (int h = 0; h < height; h++) {
-            for (int w = 0; w < width; w++) {
+        for (int h = 0; h < this.height; h++) {
+            for (int w = 0; w < this.width; w++) {
                 sb.append(this.cells[h][w]);
             }
             sb.append("\n");
