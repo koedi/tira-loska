@@ -31,3 +31,6 @@ repositories {
 run {
 }
 
+dependencies {
+    testImplementation 'junit:junit:4.13'
+}
