@@ -2,12 +2,13 @@
 
 ## This week
 
-Week started (on Saturday) with implementing testing framework using GitHub Actions
+Week started (on Saturday) with implementing testing framework using GitHub Actions. Test framework implementation continued on JUnit and Codecov. Both are now working and run as a part of GitHub Actions CI. One badge for successfully completing all tests (JUnit, Checkstyle) and one badge to display Codecov status. Both are visible on "main page".
 ### Test actions implemented:
 - [x] Checkstyle
 - [x] JUnit
-- [ ] Codecov
+- [x] Codecov
 
+### Maze generators
 First working version of BinaryTree maze generator done. Produces text based maze.
 
 
@@ -23,5 +24,6 @@ First working version of BinaryTree maze generator done. Produces text based maz
 | GH Actions | 1 |
 | Checkstyle | 0.5 |
 | JUnit | 0.5 |
+| Codecov | 0.5 |
 | Binary tree | 1+2 |
 | Total | 4 |
