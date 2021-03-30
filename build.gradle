@@ -10,6 +10,7 @@ plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 apply plugin: 'java'
@@ -33,4 +34,11 @@ run {
 
 dependencies {
     testImplementation 'junit:junit:4.13'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
