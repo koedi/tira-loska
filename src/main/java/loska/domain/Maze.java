@@ -47,13 +47,14 @@ public class Maze {
         return this.height;
     }
 
+    public char getCell(int h, int w) {
+        return this.cells[h][w];
+    }
+
     /**
      * Adds path to direction d (0=north, 1=west) from coordinate(h,w)
      */
     public void addPath(int h, int w, int d) {
- 
-        //System.out.printf("%d %d %d\n", h, w, d);
-
         if (d == 0) {
             checkNorth(h, w);
         } else {
@@ -78,10 +79,11 @@ public class Maze {
     public void checkWest(int h, int w) {
         if (h == 1 && w == 1) {     //If first cell
             this.cells[h][w] = '@';
-        } else if ((h == this.height) && (w == this.width)) {
-            this.cells[h][w] = '!';
         } else if (w == 1) {        //If at left column, only possible direction is north
             checkNorth(h, w);
+        } else if ((h == this.height - 2) && (w == this.width - 2)) {
+            this.cells[h][w] = '!';
+            this.cells[h][w - 1] = '.';
         } else {
             this.cells[h][w] = '.';
             this.cells[h][w - 1] = '.';

@@ -44,12 +44,66 @@ public class MazeTest {
         Maze m = new Maze(-1, 3);
     }
 
-
     @Test
-    public void addPathTestWithNorth() {
+    public void addPathTestToFirstCellWest() {
         maze.addPath(1, 1, 1);
+        assertEquals(maze.getCell(1, 1), '@');
     }
 
+    @Test
+    public void addPathTestToFirstCellNorth() {
+        maze.addPath(1, 1, 0);
+        assertEquals(maze.getCell(1, 1), '@');
+    }
 
+    @Test
+    public void addPathToNorth() {
+        maze.addPath(3, 3, 0);
+        assertEquals(maze.getCell(3, 3), '.');
+        assertEquals(maze.getCell(2, 3), '.');
+    }
+
+    @Test
+    public void addPathToWest() {
+        maze.addPath(3, 3, 1);
+        assertEquals(maze.getCell(3, 3), '.');
+        assertEquals(maze.getCell(3, 2), '.');
+    }
+
+    @Test
+    public void addPathToLastCellNorth() {
+        maze.addPath(13, 13, 0);
+        assertEquals(maze.getCell(13, 13), '!');
+        assertEquals(maze.getCell(12, 13), '.');
+    }
+
+    @Test
+    public void addPathToLastCellWest() {
+        maze.addPath(13, 13, 1);
+        assertEquals(maze.getCell(13, 13), '!');
+        assertEquals(maze.getCell(13, 12), '.');
+    }
+
+    @Test
+    public void addPathJumpNorthToWest() {
+        maze.addPath(1, 3, 0);
+        assertEquals(maze.getCell(1, 3), '.');
+        assertEquals(maze.getCell(1, 2), '.');
+    }
+
+    @Test
+    public void addPathJumpWestToNorth() {
+        maze.addPath(3, 1, 1);
+        assertEquals(maze.getCell(3, 1), '.');
+        assertEquals(maze.getCell(2, 1), '.');
+    }
+
+    /*
+    @Test
+    public void toStringTest() {
+        Maze m = new Maze(1,1);
+        assertEquals(System.out.print(m), "###\n###\n###\n");
+    }
+    */
 
 }
