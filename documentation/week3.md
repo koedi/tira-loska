@@ -23,7 +23,7 @@ First working version of BinaryTree maze generator done. Produces text based maz
 |------|--------------|
 | GH Actions | 1 |
 | Checkstyle | 0.5 |
-| JUnit | 0.5 |
+| JUnit | 0.5 + 2 |
 | Codecov | 0.5 |
-| Binary tree | 1+2 |
-| Total | 4 |
+| Binary tree | 1+2+0.5 |
+| Total | 7 |
