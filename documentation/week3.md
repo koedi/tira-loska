@@ -11,6 +11,24 @@ Week started (on Saturday) with implementing testing framework using GitHub Acti
 ### Maze generators
 First working version of BinaryTree maze generator done. Produces text based maze.
 
+Example of 7x7 maze, where ```@``` is the start and ```!``` is the finish
+```
+###############
+#@............#
+#.###.#.###.#.#
+#...#.#...#.#.#
+#.###########.#
+#...........#.#
+#.###.#######.#
+#...#.......#.#
+#.#.#.#.###.###
+#.#.#.#...#...#
+#.#.#.#####.###
+#.#.#.....#...#
+#.#.###.#.#.#.#
+#.#...#.#.#.#!#
+###############
+```
 
 
 
