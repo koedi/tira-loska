@@ -44,4 +44,5 @@ Example of 7x7 maze, where ```@``` is the start and ```!``` is the finish
 | JUnit | 0.5 + 2 |
 | Codecov | 0.5 |
 | Binary tree | 1+2+0.5 |
-| Total | 7 |
+| Stack implementation | 1 |
+| Total | 8 |
