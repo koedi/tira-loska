@@ -29,6 +29,24 @@ public class LoskaUI extends Application {
         
         System.out.print(bt);
 
+
+        MyStack stack = new MyStack(3);
+        Cell c1 = new Cell(1, 1);
+        Cell c2 = new Cell(2, 2);
+        Cell c3 = new Cell(3, 3);
+        Cell c4 = new Cell(4, 4);
+
+        stack.push(c1);
+        stack.push(c2);
+        stack.push(c3);
+        stack.push(c4);
+
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+
+
         // display first screen
         //stage.show();
         System.exit(0);
