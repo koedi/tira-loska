@@ -84,14 +84,9 @@ public class Maze {
     }
 
     public void checkNorth(int h, int w) {
-        /**if (h == 1 && w == 1) {      //If first cell
-            this.cells[h][w] = '@';
-        } else */if (h == 1) {         //If at top row, only possible direction is west
+        if (h == 1) {         //If at top row, only possible direction is west
             checkWest(h, w);
-        } /*else if ((h == this.height - 2) && (w == this.width - 2)) {
-            this.cells[h][w] = '!';
-            this.cells[h - 1][w] = '.';
-        } */else {
+        } else {
             this.cells[h][w] = '.';
             this.cells[h - 1][w] = '.';
         }
@@ -99,13 +94,10 @@ public class Maze {
 
     public void checkWest(int h, int w) {
         if (h == 1 && w == 1) {     //If first cell
-            //prevents infinite loop in first cell (1,1)
+            return; //prevents infinite loop in first cell (1,1)
         } else if (w == 1) {        //If at left column, only possible direction is north
             checkNorth(h, w);
-        } /*else if ((h == this.height - 2) && (w == this.width - 2)) {
-            this.cells[h][w] = '!';
-            this.cells[h][w - 1] = '.';
-        } */else {
+        } else {
             this.cells[h][w] = '.';
             this.cells[h][w - 1] = '.';
         }

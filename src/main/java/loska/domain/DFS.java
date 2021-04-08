@@ -6,6 +6,7 @@ public class DFS {
 
     private Maze maze;      // generated maze
     private Maze visited;   // track visited cells
+    private MyStack stack;
 
     public DFS(Maze m) {
         this.maze = m;
@@ -31,7 +32,13 @@ public class DFS {
 
     public void generate() {
 
-        setRandomStartingCell();
+        //Starting cell
+        int rndH = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
+        int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
+
+        maze.setCell(rndW, rndW, '@');
+
+        //m
 
 
     }
