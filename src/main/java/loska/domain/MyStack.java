@@ -1,6 +1,5 @@
 package loska.domain;
 
-
 public class MyStack<T extends Object> {
 
     private int stackSize;

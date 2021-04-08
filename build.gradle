@@ -46,3 +46,9 @@ jacocoTestReport {
 test {
   testLogging.showStandardStreams = true
 }
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'loska.Main'
+    }
+}

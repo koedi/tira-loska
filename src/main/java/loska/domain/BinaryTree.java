@@ -23,6 +23,10 @@ public class BinaryTree {
                 maze.addPath(2 * h + 1, 2 * w + 1, rnd);
             }
         }
+
+        //Set marks for start and goal
+        maze.setCell(1, 1, '@');
+        maze.setCell(maze.getHeight() - 2, maze.getWidth() - 2, '!');
     }
 
 

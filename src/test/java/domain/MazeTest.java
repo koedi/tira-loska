@@ -47,13 +47,13 @@ public class MazeTest {
     @Test
     public void addPathTestToFirstCellWest() {
         maze.addPath(1, 1, 1);
-        assertEquals(maze.getCell(1, 1), '@');
+        assertEquals(maze.getCell(1, 1), '#');
     }
 
     @Test
     public void addPathTestToFirstCellNorth() {
         maze.addPath(1, 1, 0);
-        assertEquals(maze.getCell(1, 1), '@');
+        assertEquals(maze.getCell(1, 1), '#');
     }
 
     @Test
@@ -73,14 +73,14 @@ public class MazeTest {
     @Test
     public void addPathToLastCellNorth() {
         maze.addPath(13, 13, 0);
-        assertEquals(maze.getCell(13, 13), '!');
+        assertEquals(maze.getCell(13, 13), '.');
         assertEquals(maze.getCell(12, 13), '.');
-    }
+    }    
 
     @Test
     public void addPathToLastCellWest() {
         maze.addPath(13, 13, 1);
-        assertEquals(maze.getCell(13, 13), '!');
+        assertEquals(maze.getCell(13, 13), '.');
         assertEquals(maze.getCell(13, 12), '.');
     }
 
