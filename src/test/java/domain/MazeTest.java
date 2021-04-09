@@ -43,7 +43,7 @@ public class MazeTest {
     public void mazeConstructorTestIncorrect() {
         Maze m = new Maze(-1, 3);
     }
-
+/*
     @Test
     public void addPathTestToFirstCellWest() {
         maze.addPath(1, 1, 1);
@@ -97,7 +97,7 @@ public class MazeTest {
         assertEquals(maze.getCell(3, 1), '.');
         assertEquals(maze.getCell(2, 1), '.');
     }
-
+*/
     @Test
     public void toStringTest() {
         Maze m = new Maze(1, 1);

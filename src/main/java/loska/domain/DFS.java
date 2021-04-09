@@ -4,9 +4,8 @@ package loska.domain;
 
 public class DFS {
 
-    private Maze maze;      // generated maze
-    private MyStack stack;
-    private boolean visited[][];
+    private Maze maze;                 // generated maze
+    private boolean visited[][];       // tracks visited cells
 
     public DFS(Maze m) {
         this.maze = m;
@@ -58,7 +57,7 @@ public class DFS {
                 case 1: // north
                     if (currentH - 2 >= 0 && !visited[currentH - 2][currentW]) {
                         maze.setCell(currentH - 2, currentW, '.');
-                        maze.setCell(currentH - 1, currentW, '.');
+                        maze.setCell(currentH - 1, currentW, '.');  
                         dfs(currentH - 2, currentW);
                     }
                     break;         
@@ -86,17 +85,6 @@ public class DFS {
             }
         }
         return;
-    }
-
-
-    /**
-     * Selects and sets random starting cell to '@'
-     */
-    private void setRandomStartingCell() {
-        int rndY = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
-        int rndX = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
-
-        maze.setCell(rndX, rndY, '@');
     }
 
     private void shuffleArray(int[] array) {

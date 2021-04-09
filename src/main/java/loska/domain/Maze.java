@@ -19,8 +19,6 @@ public class Maze {
      * #...#!#
      * #######
      */
-
-
     public Maze(int height, int width) {
 
         if (height <= 0 || width <= 0) {
@@ -68,46 +66,6 @@ public class Maze {
     public void setCell(int h, int w, char c) {
         this.cells[h][w] = c;
     }
-
-
-
-    // MOVE NEXT THREE METHODS TO BINARY TREE!
-    /**
-     * Adds path to direction d (0=north, 1=west) from coordinate(h,w)
-     */
-    public void addPath(int h, int w, int d) {
-        if (d == 0) {
-            checkNorth(h, w);
-        } else {
-            checkWest(h, w);
-        }
-    }
-
-    public void checkNorth(int h, int w) {
-        if (h == 1) {         //If at top row, only possible direction is west
-            checkWest(h, w);
-        } else {
-            this.cells[h][w] = '.';
-            this.cells[h - 1][w] = '.';
-        }
-    }
-
-    public void checkWest(int h, int w) {
-        if (h == 1 && w == 1) {     //If first cell
-            return; //prevents infinite loop in first cell (1,1)
-        } else if (w == 1) {        //If at left column, only possible direction is north
-            checkNorth(h, w);
-        } else {
-            this.cells[h][w] = '.';
-            this.cells[h][w - 1] = '.';
-        }
-    }
-
-
-
-
-
-
 
     @Override
     public String toString() {
