@@ -8,6 +8,8 @@ As I started to work on DFS generator I quickly noticed that I need to refactor 
 
 For DFS, I created my own implementation of stack - MyStack - which I plan to use as part of DFS recursion. Also class Cell is created for this purpose and to be placed in MyStack.
 
+After I finished DFS implementation without MyStack is time to say goodbye to MyStack and Cell classes. Luckily there is a another way to implement recursion through all unvisited neighbours. Is it faster? I don't know. Is it cleaner? Probably. Is it "more sophisticated"? Well, no. I'll leave MyStack implmentation (do not delete) in case there is still need for it.
+
 
 ### Test actions implemented:
 - [x] Checkstyle
@@ -15,9 +17,11 @@ For DFS, I created my own implementation of stack - MyStack - which I plan to us
 - [x] Codecov
 
 ### Maze generators
-First working version of BinaryTree maze generator done. Produces text based maze.
+First working versions of BinaryTree and Depth-First Search maze generators done. Produces text based mazes.
 
-Example of 7x7 maze, where ```@``` is the start and ```!``` is the finish
+Examples of 7x7 maze, where ```@``` is the start and ```!``` is the finish.
+
+#### Binary Tree
 ```
 ###############
 #@............#
@@ -35,6 +39,26 @@ Example of 7x7 maze, where ```@``` is the start and ```!``` is the finish
 #.#...#.#.#.#!#
 ###############
 ```
+
+#### Depth-First Search
+```
+###############
+#@............#
+#.#.###########
+#.#.#.........#
+###.#.#######.#
+#...#.....##..#
+#.#######.#####
+#.......#.#...#
+#.#####.#.###.#
+#.#.#...#.....#
+#.#.#.#######.#
+#...#.......#.#
+###.#######.#.#
+#.........#..!#
+###############
+```
+
 
 
 
