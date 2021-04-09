@@ -34,9 +34,11 @@ public class DFS {
         //Random starting cell
         int rndH = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
         int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
-        maze.setCell(rndH, rndW, '@');
         
         dfs(rndH, rndW);
+
+        maze.setCell(1, 1, '@');
+        maze.setCell(maze.getHeight() - 2, maze.getWidth() - 2, '!');
     }
 
     /** 
