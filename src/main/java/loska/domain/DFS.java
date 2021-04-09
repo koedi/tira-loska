@@ -39,7 +39,7 @@ public class DFS {
         dfs(rndH, rndW);
     }
 
-    /**
+    /** 
      * Recursive method for Depth First Search 
      */
     private void dfs(int currentH, int currentW) {
@@ -61,25 +61,25 @@ public class DFS {
                     }
                     break;         
                 case 2: // east
-                if (currentW + 2 < maze.getWidth() && !visited[currentH][currentW + 2]) {
-                    maze.setCell(currentH, currentW + 2, '.');
-                    maze.setCell(currentH, currentW + 1, '.');
-                    dfs(currentH, currentW + 2);
-                }
+                    if (currentW + 2 < maze.getWidth() && !visited[currentH][currentW + 2]) {
+                        maze.setCell(currentH, currentW + 2, '.');
+                        maze.setCell(currentH, currentW + 1, '.');
+                        dfs(currentH, currentW + 2);
+                    }
                     break;
                 case 3: // south 
-                if (currentH + 2 < maze.getHeight() && !visited[currentH + 2][currentW]) {
-                    maze.setCell(currentH + 2, currentW, '.');
-                    maze.setCell(currentH + 1, currentW, '.');
-                    dfs(currentH + 2, currentW);
-                }
+                    if (currentH + 2 < maze.getHeight() && !visited[currentH + 2][currentW]) {
+                        maze.setCell(currentH + 2, currentW, '.');
+                        maze.setCell(currentH + 1, currentW, '.');
+                        dfs(currentH + 2, currentW);
+                    }
                     break;
                 case 4: // west
-                if (currentW - 2 >= 0 && !visited[currentH][currentW - 2]) {
-                    maze.setCell(currentH, currentW - 2, '.');
-                    maze.setCell(currentH, currentW - 1, '.');
-                    dfs(currentH, currentW - 2);
-                }
+                    if (currentW - 2 >= 0 && !visited[currentH][currentW - 2]) {
+                        maze.setCell(currentH, currentW - 2, '.');
+                        maze.setCell(currentH, currentW - 1, '.');
+                        dfs(currentH, currentW - 2);
+                    }
                     break;
             }
         }
