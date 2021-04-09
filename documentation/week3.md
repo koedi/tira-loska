@@ -8,7 +8,7 @@ As I started to work on DFS generator I quickly noticed that I need to refactor 
 
 For DFS, I created my own implementation of stack - MyStack - which I plan to use as part of DFS recursion. Also class Cell is created for this purpose and to be placed in MyStack.
 
-After I finished DFS implementation without MyStack is time to say goodbye to MyStack and Cell classes. Luckily there is a another way to implement recursion through all unvisited neighbours. Is it faster? I don't know. Is it cleaner? Probably. Is it "more sophisticated"? Well, no. I'll leave MyStack implmentation (do not delete) in case there is still need for it.
+After I finished DFS implementation without MyStack is time to say goodbye to MyStack and Cell classes. Luckily there is a another way to implement recursion through all unvisited neighbours. Is it faster? I don't know. Is it cleaner? Probably. Is it "more sophisticated"? Well, no. I'll leave MyStack implementation (do not delete) in case there is still need for it.
 
 
 ### Test actions implemented:
@@ -63,7 +63,7 @@ Examples of 7x7 maze, where ```@``` is the start and ```!``` is the finish.
 
 
 ## Next steps
-
+Now that the algorithms seem to work it is time to consider GUI vs text. Also one option would be to skip GUI and implement one or two maze solvers.
 
 ## Time spent
 
@@ -71,8 +71,10 @@ Examples of 7x7 maze, where ```@``` is the start and ```!``` is the finish.
 |------|--------------|
 | GH Actions | 1 |
 | Checkstyle | 0.5 |
-| JUnit | 0.5 + 2 + 0.5|
+| JUnit | 0.5 + 2 + 2|
 | Codecov | 0.5 |
-| Binary tree | 1 + 2 + 0.5 + 4|
+| Binary tree | 1 + 2 + 0.5 + 2|
 | Stack implementation | 1 |
-| Total | 8 |
+| Refactor | 1 |
+| General | 1 |
+| Total | 15 |
