@@ -5,19 +5,18 @@ package loska.domain;
 public class DFS {
 
     private Maze maze;      // generated maze
-    private Maze visited;   // track visited cells
     private MyStack stack;
+    private boolean visited[][];
 
     public DFS(Maze m) {
         this.maze = m;
 
-        this.visited = new Maze(m.getOrigHeight(), m.getOrigWidth());
-        for (int i = 0; i < this.visited.getHeight(); i++) {
-            for (int j = 0; j < this.visited.getWidth(); j++) {
-                this.visited.setCell(i, j, '0');
+        this.visited = new boolean[this.maze.getHeight()][this.maze.getWidth()];
+        for (int i = 0; i < this.maze.getHeight(); i++) {
+            for (int j = 0; j < this.maze.getWidth(); j++) {
+                this.visited[i][j] = false;
             }
-        } 
-
+        }
     }
 
 
@@ -32,15 +31,59 @@ public class DFS {
 
     public void generate() {
 
-        //Starting cell
+        //Random starting cell
         int rndH = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
         int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
+        maze.setCell(rndH, rndW, '@');
+        
+        dfs(rndH, rndW);
+    }
 
-        maze.setCell(rndW, rndW, '@');
+    /**
+     * Recursive method for Depth First Search 
+     */
+    private void dfs(int currentH, int currentW) {
 
-        //m
+        //mark current cell visited
+        visited[currentH][currentW] = true;
 
+        //go through four directions for neighbours in random order
+        int[] dirs = {1, 2, 3, 4};
+        shuffleArray(dirs);
 
+        for (int i: dirs) {
+            switch (i) {
+                case 1: // north
+                    if (currentH - 2 >= 0 && !visited[currentH - 2][currentW]) {
+                        maze.setCell(currentH - 2, currentW, '.');
+                        maze.setCell(currentH - 1, currentW, '.');
+                        dfs(currentH - 2, currentW);
+                    }
+                    break;         
+                case 2: // east
+                if (currentW + 2 < maze.getWidth() && !visited[currentH][currentW + 2]) {
+                    maze.setCell(currentH, currentW + 2, '.');
+                    maze.setCell(currentH, currentW + 1, '.');
+                    dfs(currentH, currentW + 2);
+                }
+                    break;
+                case 3: // south 
+                if (currentH + 2 < maze.getHeight() && !visited[currentH + 2][currentW]) {
+                    maze.setCell(currentH + 2, currentW, '.');
+                    maze.setCell(currentH + 1, currentW, '.');
+                    dfs(currentH + 2, currentW);
+                }
+                    break;
+                case 4: // west
+                if (currentW - 2 >= 0 && !visited[currentH][currentW - 2]) {
+                    maze.setCell(currentH, currentW - 2, '.');
+                    maze.setCell(currentH, currentW - 1, '.');
+                    dfs(currentH, currentW - 2);
+                }
+                    break;
+            }
+        }
+        return;
     }
 
 
@@ -48,10 +91,23 @@ public class DFS {
      * Selects and sets random starting cell to '@'
      */
     private void setRandomStartingCell() {
-        int rndH = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
-        int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
+        int rndY = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
+        int rndX = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
 
-        maze.setCell(rndW, rndW, '@');
+        maze.setCell(rndX, rndY, '@');
+    }
+
+    private void shuffleArray(int[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            int rnd = (int) (System.nanoTime() % array.length);
+            if (i == rnd) {
+                i++;
+            } else {
+                int a = array[rnd];
+                array[rnd] = array[i];
+                array[i] = a;
+            }
+        }
     }
 
 
