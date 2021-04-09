@@ -43,6 +43,36 @@ public class MazeTest {
     public void mazeConstructorTestIncorrect() {
         Maze m = new Maze(-1, 3);
     }
+
+    @Test
+    public void mazeTestGetHeight() {
+        assertEquals(maze.getHeight(), 15);
+    }
+
+    @Test
+    public void mazeTestGetOrigHeight() {
+        assertEquals(maze.getOrigHeight(), 7);
+    }
+
+    @Test
+    public void mazeTestGetWidth() {
+        assertEquals(maze.getWidth(), 15);
+    }
+
+    @Test
+    public void mazeTestGetOrigWidth() {
+        assertEquals(maze.getOrigWidth(), 7);
+    }
+
+    @Test
+    public void mazeTestSetCellGetCell() {
+        maze.setCell(4, 4, 'k');
+        assertEquals(maze.getCell(4, 4), 'k');
+    }
+
+
+
+
 /*
     @Test
     public void addPathTestToFirstCellWest() {
