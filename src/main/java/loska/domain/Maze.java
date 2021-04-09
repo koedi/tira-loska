@@ -32,6 +32,7 @@ public class Maze {
         this.width  = 2 * width + 1;
         this.cells = new char[this.height][this.width];
 
+        //Init all cells to '#'
         for (int h = 0; h < this.height; h++) {
             for (int w = 0; w < this.width; w++) {
                 this.cells[h][w] = '#';
@@ -50,10 +51,16 @@ public class Maze {
         return this.height;
     }
 
+    /**
+     * @return unscaled width
+     */
     public int getOrigWidth() {
         return this.origWidth;
     }
 
+    /**
+     *  @return unscaled height
+     */
     public int getOrigHeight() {
         return this.origHeight;
     }
