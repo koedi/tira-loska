@@ -25,4 +25,20 @@ public class DFSTest {
     public void tearDown() {
     }
 
+
+    @Test
+    public void generatorTest() {
+        dfs.generate();
+
+        assertEquals(maze.getCell(1, 1), '@');
+        assertEquals(maze.getCell(13, 13), '!');
+    }
+
+    @Test
+    public void toStringTest() {
+        Maze m = new Maze(1, 1);
+        DFS dfs = new DFS(m);
+        assertEquals(dfs.toString(), "###\n###\n###\n");
+    }
+
 }
