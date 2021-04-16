@@ -98,7 +98,7 @@ public class BinaryTreeTest {
     public void toStringTest() {
         Maze m = new Maze(1, 1);
         BinaryTree bt = new BinaryTree(m);
-        assertEquals(bt.toString(), "###\n###\n###\n");
+        assertEquals(bt.toString(), "###\n###\n###");
     }
 
 }

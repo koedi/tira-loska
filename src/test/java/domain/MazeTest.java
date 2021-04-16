@@ -131,6 +131,6 @@ public class MazeTest {
     @Test
     public void toStringTest() {
         Maze m = new Maze(1, 1);
-        assertEquals(m.toString(), "###\n###\n###\n");
+        assertEquals(m.toString(), "###\n###\n###");
     }
 }

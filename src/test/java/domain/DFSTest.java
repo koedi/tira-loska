@@ -38,7 +38,7 @@ public class DFSTest {
     public void toStringTest() {
         Maze m = new Maze(1, 1);
         DFS dfs = new DFS(m);
-        assertEquals(dfs.toString(), "###\n###\n###\n");
+        assertEquals(dfs.toString(), "###\n###\n###");
     }
 
 }
