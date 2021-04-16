@@ -71,6 +71,8 @@ public class LoskaUI extends Application {
         HBox control = new HBox(4);
         Button btn1 = new Button("BT");
         Button btn2 = new Button("DFS");
+        Text text1 = new Text("height");
+        Text text2 = new Text("width");
         TextField height = new TextField("7");
         TextField width = new TextField("7");
 
@@ -79,6 +81,8 @@ public class LoskaUI extends Application {
 
         control.getChildren().add(btn1);
         control.getChildren().add(btn2);
+        control.getChildren().add(text1);
+        control.getChildren().add(text2);
         control.getChildren().add(height);
         control.getChildren().add(width);
 
@@ -98,11 +102,11 @@ public class LoskaUI extends Application {
         mazeDisplay.setAlignment(Pos.CENTER);
 
         String cssLayout = 
-        "-fx-background-color: lightyellow;" +
-        "-fx-border-color: red;\n" +
-        "-fx-border-insets: 5;\n" +
-        "-fx-border-width: 3;\n" +
-        "-fx-border-style: dashed;\n";
+            "-fx-background-color: lightyellow;" +
+            "-fx-border-color: red;\n" +
+            "-fx-border-insets: 5;\n" +
+            "-fx-border-width: 3;\n" +
+            "-fx-border-style: dashed;\n";
 
         mazeDisplay.setStyle(cssLayout);
 

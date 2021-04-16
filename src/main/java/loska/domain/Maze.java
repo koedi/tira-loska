@@ -82,7 +82,7 @@ public class Maze {
             for (int w = 0; w < this.width; w++) {
                 sb.append(this.cells[h][w]);
             }
-            if(h < this.height - 1) {
+            if (h < this.height - 1) {
                 sb.append("\n");
             }
         }
