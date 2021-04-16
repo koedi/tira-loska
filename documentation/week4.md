@@ -8,6 +8,9 @@ Week 4 continued with GUI creation. Stitching parts piece by piece and finally s
 
 The Maze Display part still needs a bit work, at least scrolling should be implemented. Scaling probably not.
 
+![alt text](https://github.com/koedi/tira-loska/blob/main/documentation/maze.png)
+
+
 ## Next steps
 
 Tests for the general UI methods. The GUI I will leave untested.
