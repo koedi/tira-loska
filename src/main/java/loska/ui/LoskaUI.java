@@ -33,35 +33,18 @@ public class LoskaUI extends Application {
      */   
     @Override
     public void start(Stage stage) {
- 
-        Maze m;
         Button btn1 = new Button("BT"); 
         Button btn2 = new Button("DFS");
+        TextField height = new TextField("7");
+        TextField width = new TextField("7");
 
-        m = new Maze(10, 10);  
-        BinaryTree bt = new BinaryTree(m);
-        bt.generate();
-        //System.out.println("Binary Tree");
-        //System.out.print(bt);
-
-        System.out.print("\n\n");
-
-        m = new Maze(10, 10);
-        DFS dfs = new DFS(m);
-        dfs.generate();
-        //System.out.println("Depth-First Search");
-        //System.out.println(dfs);
- 
-
-
-        // Main scene
-        //top row for control buttons
-        GridPane control = createTopRow(btn1, btn2);
+        // Create top row for control buttons
+        GridPane control = createTopRow(btn1, btn2, height, width);
         
-        //maze display box
+        // Create maze display box
         VBox mazeDisplay = createMazeDisplay();
 
-        //whole area
+        // Create whole area
         VBox root = new VBox(control, mazeDisplay);
         Scene scene = new Scene(root, 800, 600);    
         stage.setScene(scene);
@@ -69,28 +52,28 @@ public class LoskaUI extends Application {
 
         stage.show();
 
+        // Button actions
         btn1.setOnAction(e -> {
+            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
+            BinaryTree bt = new BinaryTree(m);
+            bt.generate();
             updateMazeDisplay(bt, mazeDisplay);           
         });
  
         btn2.setOnAction(e -> {
+            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
+            DFS dfs = new DFS(m);
+            dfs.generate();
+
             updateMazeDisplay(dfs, mazeDisplay);           
         });
-
-        //updateMazeDisplay(bt, mazeDisplay);
-
-        //System.exit(0);
     }
 
 
-    public GridPane createTopRow(Button btn1, Button btn2) {
+    public GridPane createTopRow(Button btn1, Button btn2, TextField height, TextField width) {
         GridPane control = new GridPane();
-        //btn1 = new Button("BT");
-        //btn2 = new Button("DFS");
         Text text1 = new Text("height");
         Text text2 = new Text("width");
-        TextField height = new TextField("7");
-        TextField width = new TextField("7");
 
         btn1.setMinWidth(50);
         btn2.setMinWidth(50);
