@@ -10,6 +10,8 @@ import javafx.scene.text.Font;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.geometry.Pos;
 
 /**
  * Main UI class
@@ -44,19 +46,28 @@ public class LoskaUI extends Application {
         
         // Main scene
         //top row for control buttons
-        HBox control = new HBox();
-        Button btn1 = new Button("eka");
+        HBox control = new HBox(4);
+        Button btn1 = new Button("BT");
+        Button btn2 = new Button("DFS");
+        TextField height = new TextField("7");
+        TextField width = new TextField("7");
         control.getChildren().add(btn1);
+        control.getChildren().add(btn2);
+        control.getChildren().add(height);
+        control.getChildren().add(width);
 
         //maze display box
         Text text = new Text(dfs.toString());
         text.setFont(Font.font("Ubuntu Mono", 20));
-        VBox maze = new VBox(text);
+        VBox mazeDisplay = new VBox(text);
+        mazeDisplay.setSpacing(20);
+        mazeDisplay.setAlignment(Pos.CENTER);
 
         //whole area
-        VBox vbox = new VBox(control, maze);
+        VBox root = new VBox(control, mazeDisplay);
         
-        Scene scene = new Scene(vbox, 800,600);
+
+        Scene scene = new Scene(root, 800, 600);
         stage.setScene(scene);
         stage.setTitle("Maze generator - BT + DFS");
 
