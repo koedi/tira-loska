@@ -49,7 +49,7 @@ public class BinaryTree {
 
     public void checkWest(int h, int w) {
         if (h == 1 && w == 1) {     //If first cell
-            return; //prevents infinite loop in first cell (1,1)
+            return;                 //prevents infinite loop in first cell (1,1)
         } else if (w == 1) {        //If at left column, only possible direction is north
             checkNorth(h, w);
         } else {

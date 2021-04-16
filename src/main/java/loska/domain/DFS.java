@@ -21,11 +21,11 @@ public class DFS {
 
     /**
      * Depth First Search maze generator works following:
-     * - Choose a random starting cell and add it to the stack
-     * - While there is a cell in the stack
-     * 1) Pop cell from the stack
-     * 2) Connect and visit all available neighbours (bottom, left, right, top)
-     * 3) Randomly select one to be on top and push it to the stack
+     * 1) Choose a random starting cell and set as current
+     * 2) For current cell, go through all four directions in random order and
+     * 2.1) Check if neighbour is not visited (and within maze boundaries)
+     * 2.2) Connect, set as new current and jump to 2) 
+     * 3) When all cells are visited, i.e. recursion has ended, set start and goal
      */
 
     public void generate() {
@@ -33,9 +33,11 @@ public class DFS {
         //Random starting cell
         int rndH = (int) (System.nanoTime() % maze.getOrigHeight() * 2 + 1);
         int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
-        
+
+        //Recursion method
         dfs(rndH, rndW);
 
+        //Set start and goal
         maze.setCell(1, 1, '@');
         maze.setCell(maze.getHeight() - 2, maze.getWidth() - 2, '!');
     }
@@ -48,7 +50,7 @@ public class DFS {
         //mark current cell visited
         visited[currentH][currentW] = true;
 
-        //go through four directions for neighbours in random order
+        //go through four directions of neighbours in random order
         int[] dirs = {1, 2, 3, 4};
         shuffleArray(dirs);
 
@@ -87,6 +89,9 @@ public class DFS {
         return;
     }
 
+    /**
+     * Shuffles an int array
+     */
     private void shuffleArray(int[] array) {
         for (int i = array.length - 1; i > 0; i--) {
             int rnd = (int) (System.nanoTime() % array.length);
@@ -99,8 +104,6 @@ public class DFS {
             }
         }
     }
-
-
 
     @Override
     public String toString() {
