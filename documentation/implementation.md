@@ -1,0 +1,2 @@
+# Maze generator implementation document
+
