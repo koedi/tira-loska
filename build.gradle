@@ -9,18 +9,25 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
     id 'checkstyle'
     id 'jacoco'
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'org.openjfx.javafxplugin'
 
-mainClassName = "loska.Main"
+
+
+application {
+    mainClassName = 'loska.Main'
+}
+
 
 javafx {
     version = '11'
-    modules = ['javafx.controls','javafx.fxml']
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics']
 }
 
 
