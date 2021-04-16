@@ -10,8 +10,10 @@ Maze creation project done in Java
 ## Documentation
 
 [Project definition](https://github.com/koedi/tira-loska/blob/main/documentation/definition.md)
-[]()
-[]()
+
+[Project implementation - draft](https://github.com/koedi/tira-loska/blob/main/documentation/implementation.md)
+
+[Project testing - draft](https://github.com/koedi/tira-loska/blob/main/documentation/testing.md)
 []()
 
 
