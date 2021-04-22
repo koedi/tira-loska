@@ -41,7 +41,6 @@ public class Maze {
     }
 
     //Checks if maze has been generated correctly i.e. all cells are connected  
-
     public boolean checkMaze() {
         boolean[][] visited = new boolean[this.getHeight()][this.getWidth()];
         for (int i = 0; i < this.getHeight(); i++) {
@@ -49,11 +48,27 @@ public class Maze {
                 visited[i][j] = false;
             }
         }
+
+        //Traverse maze
         this.setCell(1, 1, '.');
         this.setCell(this.getHeight() - 2, this.getWidth() - 2, '.');
         dfsTraverse(1, 1, visited);
 
-        return false;
+        //Check "true" count
+        int count = 0;
+        for (int i = 0; i < this.getHeight(); i++) {
+            for (int j = 0; j < this.getWidth(); j++) {
+                if (visited[i][j] == true) {
+                    count++;
+                }
+            }
+        }
+
+        if (count != this.getOrigHeight() *  this.getOrigWidth()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -63,9 +78,6 @@ public class Maze {
      * @param visited tracks visited cells
      */
     private void dfsTraverse(int currentH, int currentW, boolean[][] visited) {
-
-        //System.out.println("Checking cell (" + currentH + ", " + currentW + ")");
-
         //mark current cell visited
         visited[currentH][currentW] = true;
 

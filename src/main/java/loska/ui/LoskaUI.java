@@ -58,6 +58,8 @@ public class LoskaUI extends Application {
             BinaryTree bt = new BinaryTree(m);
             bt.generate();
             updateMazeDisplay(bt, mazeDisplay);           
+
+            System.out.println(m.checkMaze());
         });
  
         btn2.setOnAction(e -> {
@@ -66,7 +68,7 @@ public class LoskaUI extends Application {
             dfs.generate();
             updateMazeDisplay(dfs, mazeDisplay);           
 
-            m.checkMaze();
+            System.out.println(m.checkMaze());
         });
     }
 
