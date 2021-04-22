@@ -40,13 +40,61 @@ public class Maze {
         }
     }
 
-    //Checks if maze has been generated correctly i.e. all cells are connected
+    //Checks if maze has been generated correctly i.e. all cells are connected  
 
-    public boolean checkMaze(Maze m) {
-
+    public boolean checkMaze() {
+        boolean[][] visited = new boolean[this.getHeight()][this.getWidth()];
+        for (int i = 0; i < this.getHeight(); i++) {
+            for (int j = 0; j < this.getWidth(); j++) {
+                visited[i][j] = false;
+            }
+        }
+        this.setCell(1, 1, '.');
+        this.setCell(this.getHeight() - 2, this.getWidth() - 2, '.');
+        dfsTraverse(1, 1, visited);
 
         return false;
     }
+
+    /**
+     * Traverse maze using Depth-First Search
+     * @param currentH h position
+     * @param currentW w position
+     * @param visited tracks visited cells
+     */
+    private void dfsTraverse(int currentH, int currentW, boolean[][] visited) {
+
+        //System.out.println("Checking cell (" + currentH + ", " + currentW + ")");
+
+        //mark current cell visited
+        visited[currentH][currentW] = true;
+
+        // north
+        if (currentH - 2 >= 0 && !visited[currentH - 2][currentW]) {
+            if ((this.getCell(currentH - 1, currentW) == '.') && (this.getCell(currentH - 2, currentW) == '.')) {
+                dfsTraverse(currentH - 2, currentW, visited);
+            }  
+        }
+        // east
+        if (currentW + 2 < this.getWidth() && !visited[currentH][currentW + 2]) {
+            if ((this.getCell(currentH , currentW + 1) == '.') && (this.getCell(currentH , currentW + 2) == '.')) {
+                dfsTraverse(currentH, currentW + 2, visited);
+            }
+        }        
+        // south 
+        if (currentH + 2 < this.getHeight() && !visited[currentH + 2][currentW]) {
+            if ((this.getCell(currentH + 1, currentW) == '.') && (this.getCell(currentH + 2, currentW) == '.')) {
+                dfsTraverse(currentH + 2, currentW, visited);
+            }  
+        }
+        // west
+        if (currentW - 2 >= 0 && !visited[currentH][currentW - 2]) {
+            if ((this.getCell(currentH , currentW - 1) == '.') && (this.getCell(currentH , currentW - 2) == '.')) {
+                dfsTraverse(currentH, currentW - 2, visited);
+            }        
+        }
+    }  
+
 
 
 

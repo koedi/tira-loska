@@ -64,8 +64,9 @@ public class LoskaUI extends Application {
             Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
             DFS dfs = new DFS(m);
             dfs.generate();
-
             updateMazeDisplay(dfs, mazeDisplay);           
+
+            m.checkMaze();
         });
     }
 

@@ -35,6 +35,7 @@ public class DFS {
         int rndW = (int) (System.nanoTime() % maze.getOrigWidth() * 2 + 1);
 
         //Recursion method
+        maze.setCell(rndH, rndW, '.');
         dfs(rndH, rndW);
 
         //Set start and goal
