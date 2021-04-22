@@ -40,6 +40,14 @@ public class Maze {
         }
     }
 
+    //Checks if maze has been generated correctly i.e. all cells are connected
+
+    public boolean checkMaze(Maze m) {
+
+
+        return false;
+    }
+
 
 
     //Getters
