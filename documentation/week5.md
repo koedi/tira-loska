@@ -17,7 +17,7 @@ Improve code coverage and add more JUnit tests.
 | Task | Working time |
 |------|--------------|
 | Peer review | 1.5 |
-| Documentation | 1 |
-| Maze integrity testing | 2 |
-| Total | 4.5 |
+| Documentation | 2 |
+| Maze integrity testing | 2.5 |
+| Total | 6 |
 
