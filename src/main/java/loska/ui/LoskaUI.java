@@ -2,13 +2,14 @@ package loska.ui;
 
 import loska.domain.*;
 
+import java.util.Observable;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -20,7 +21,6 @@ import javafx.geometry.Insets;
 /**
  * Main UI class
  */
-
 public class LoskaUI extends Application {
     
     public static void main(String[] args) {
@@ -54,7 +54,8 @@ public class LoskaUI extends Application {
 
         // Button actions
         btn1.setOnAction(e -> {
-            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
+            int values[] = checkMazeParameters(height, width);
+            Maze m = new Maze(values[0], values[1]);
             BinaryTree bt = new BinaryTree(m);
             bt.generate();
             updateMazeDisplay(bt, mazeDisplay);           
@@ -63,15 +64,64 @@ public class LoskaUI extends Application {
         });
  
         btn2.setOnAction(e -> {
-            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
+            int values[] = checkMazeParameters(height, width);
+            Maze m = new Maze(values[0], values[1]);
             DFS dfs = new DFS(m);
             dfs.generate();
             updateMazeDisplay(dfs, mazeDisplay);           
 
             System.out.println(m.checkMaze());
+        }); 
+
+        addTextBoxListeners(height, width);
+    }
+
+    /**
+     * Adds real time input validation to height and width textboxes
+     * @param height
+     * @param width
+     */
+    private void addTextBoxListeners(TextField height, TextField width) {
+        // real time input validation
+        height.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                height.setText("1");
+            } else if (!newValue.equals("") && Integer.parseInt(newValue) > 100) {
+                height.setText(oldValue);
+            }
+        });
+        width.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                width.setText("1");
+            } else if (!newValue.equals("") && Integer.parseInt(newValue) > 100) {
+                width.setText(oldValue);
+            }
         });
     }
 
+
+    /**
+     * Validates input values and defaults to (10,10) if not
+     * @param height value to be checked
+     * @param width  value to be checked
+     * @return value is an array of two ints -- height and width
+     */
+    private int[] checkMazeParameters(TextField height, TextField width) {
+        int values[] = new int[2];
+        values[0] = 10;
+        values[1] = 10;
+        if (!height.getText().equals(""))  {
+            values[0] = Integer.parseInt(height.getText());
+        }
+        if (!width.getText().equals("")) {
+            values[1] = Integer.parseInt(width.getText());
+        }
+        
+        height.setText(String.valueOf(values[0]));
+        width.setText(String.valueOf(values[1]));
+
+        return values;
+    }
 
     public GridPane createTopRow(Button btn1, Button btn2, TextField height, TextField width) {
         GridPane control = new GridPane();
