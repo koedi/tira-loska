@@ -14,7 +14,8 @@ Maze creation project done in Java
 [Project implementation - draft](https://github.com/koedi/tira-loska/blob/main/documentation/implementation.md)
 
 [Project testing](https://github.com/koedi/tira-loska/blob/main/documentation/testing.md)
-[]()
+
+[User guide - draft](https://github.com/koedi/tira-loska/blob/main/documentation/userguide.md)
 
 
 
