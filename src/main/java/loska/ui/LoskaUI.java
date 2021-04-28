@@ -2,8 +2,6 @@ package loska.ui;
 
 import loska.domain.*;
 
-import java.util.Observable;
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
