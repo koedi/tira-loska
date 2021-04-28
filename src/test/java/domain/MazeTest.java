@@ -70,67 +70,69 @@ public class MazeTest {
         assertEquals(maze.getCell(4, 4), 'k');
     }
 
-
-
-
-/*
-    @Test
-    public void addPathTestToFirstCellWest() {
-        maze.addPath(1, 1, 1);
-        assertEquals(maze.getCell(1, 1), '#');
-    }
-
-    @Test
-    public void addPathTestToFirstCellNorth() {
-        maze.addPath(1, 1, 0);
-        assertEquals(maze.getCell(1, 1), '#');
-    }
-
-    @Test
-    public void addPathToNorth() {
-        maze.addPath(3, 3, 0);
-        assertEquals(maze.getCell(3, 3), '.');
-        assertEquals(maze.getCell(2, 3), '.');
-    }
-
-    @Test
-    public void addPathToWest() {
-        maze.addPath(3, 3, 1);
-        assertEquals(maze.getCell(3, 3), '.');
-        assertEquals(maze.getCell(3, 2), '.');
-    }
-
-    @Test
-    public void addPathToLastCellNorth() {
-        maze.addPath(13, 13, 0);
-        assertEquals(maze.getCell(13, 13), '.');
-        assertEquals(maze.getCell(12, 13), '.');
-    }    
-
-    @Test
-    public void addPathToLastCellWest() {
-        maze.addPath(13, 13, 1);
-        assertEquals(maze.getCell(13, 13), '.');
-        assertEquals(maze.getCell(13, 12), '.');
-    }
-
-    @Test
-    public void addPathJumpNorthToWest() {
-        maze.addPath(1, 3, 0);
-        assertEquals(maze.getCell(1, 3), '.');
-        assertEquals(maze.getCell(1, 2), '.');
-    }
-
-    @Test
-    public void addPathJumpWestToNorth() {
-        maze.addPath(3, 1, 1);
-        assertEquals(maze.getCell(3, 1), '.');
-        assertEquals(maze.getCell(2, 1), '.');
-    }
-*/
     @Test
     public void toStringTest() {
         Maze m = new Maze(1, 1);
         assertEquals(m.toString(), "###\n###\n###");
     }
+
+    @Test
+    public void testCheckMazeFalse() {
+        Maze m = new Maze(2,2);
+        m.setCell(1, 1, '@');
+        m.setCell(1, 2, '.');
+        m.setCell(1, 3, '.');
+        m.setCell(3, 1, '.');
+        m.setCell(3, 2, '.');
+        m.setCell(3, 3, '!');
+
+        assertEquals(m.checkMaze(), false);
+    }
+
+    @Test
+    public void testCheckMazeTrue() {
+        Maze m = new Maze(2,2);
+        m.setCell(1, 1, '@');
+        m.setCell(1, 2, '.');
+        m.setCell(1, 3, '.');
+        m.setCell(2, 1, '.');
+        m.setCell(3, 1, '.');
+        m.setCell(3, 2, '.');
+        m.setCell(3, 3, '!');
+
+        assertEquals(m.checkMaze(), true);
+    }
+
+    @Test
+    public void testCheckMazeTrue2() {
+        Maze m = new Maze(2,2);
+        m.setCell(1, 1, '@');
+        m.setCell(1, 3, '.');
+        m.setCell(2, 1, '.');
+        m.setCell(2, 3, '.');
+        m.setCell(3, 1, '.');
+        m.setCell(3, 2, '.');
+        m.setCell(3, 3, '!');
+
+        assertEquals(m.checkMaze(), true);
+    }
+
+    @Test
+    public void testCheckMazeTrue3() {
+        Maze m = new Maze(2,2);
+        m.setCell(1, 1, '@');
+        m.setCell(1, 2, '.');
+        m.setCell(1, 3, '.');
+        m.setCell(2, 3, '.');
+        m.setCell(3, 1, '.');
+        m.setCell(3, 2, '.');
+        m.setCell(3, 3, '!');
+
+        assertEquals(m.checkMaze(), true);
+    }
+
+
+
+
+
 }

@@ -50,7 +50,7 @@ jacocoTestReport {
     }
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: 'loska/ui/**')
+            fileTree(dir: it, exclude: ['loska/ui/**', 'loska/domain/Cell**', 'loska/domain/MyStack**'])
         }))
     }
 }
