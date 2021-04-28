@@ -15,7 +15,7 @@ Check if peer review #2 creates any changes. Implementetaion documentation final
 
 | Task | Working time |
 |------|--------------|
-| Peer review #2 |  |
+| Peer review #2 | 1,5 |
 | Documentation |  |
 | Changes based on peer review #1 | 2 |
 | Increasing code coverage | |
