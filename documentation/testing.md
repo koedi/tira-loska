@@ -2,6 +2,8 @@
 
 This document describes implemented testing and tests.
 
+Checkstyle, JUnit tests and Code coverage are run as GitHub Action to implement simple CI.
+
 ## Maze integrity testing
 Class Maze contains methods used to test maze integrity, i.e. all cells are accessible. Integrity testing is implemented using Depth First Search.
 
