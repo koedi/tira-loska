@@ -22,6 +22,10 @@ Currently Maze funtionality consists of three parts: Maze, Binary Tree algorithm
 Maze is object to contain the Maze and algorithms are used to generate maze. Binary Tree and Depth First Search algorithms are described in more detail here:
 [Maze generation algorithms](https://medium.com/analytics-vidhya/maze-generations-algorithms-and-visualizations-9f5e88a3ae37)
 
+Maze start and goal are always in opposite corners -- north-west and south-east. They are not placed as far as possible, this is a design choice.
+
+Maze size is restricted between (1,1) and (100,100). First limit is quite obvious, but latter one is not a limitation of algorithms as such, but of choice implementation of Depth First Search. Binary Tree algorithm is capable to create large mazes without running to memory limitations, but recursive DFS increases the stack size and eventually will crash. Therefore the maze size hasa been limiteted. Alternative, would be to use stack instead of recursion, and the building blocks for this are available, but this implementation choice was abandoned by lack of time.
+
 
 ## GUI
 
