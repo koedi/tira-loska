@@ -30,3 +30,18 @@ Covecov is used to measure testing coverage. Unit tests are used to cover classe
 ## Checkstyle
 
 Checkstyle is used as part of build and uses default settings from Ohjelmistotuotanto-course. Only change is increased method length from 25 to 40 to accomodate feasible UI.
+
+
+## Time and space complexity
+
+### Binary Tree
+The time complexity of BT is ```O(n)```, where ```n``` is the number of nodes.
+
+The space complexity of BT is ```O(1)```. There is no recursion, stack, or any other data structure needed.
+
+
+
+### Depth First Search (recursive)
+The time complexity of DFS is ```O(V + E)```, where ```V``` is the number of vertices and ```E``` is the number of egdes.
+
+The space complexity of DFS is ```O(n)```, where ```n``` is the number of nodes.
