@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
@@ -35,9 +36,10 @@ public class LoskaUI extends Application {
         Button btn2 = new Button("DFS");
         TextField height = new TextField("7");
         TextField width = new TextField("7");
+        Label label = new Label("");
 
         // Create top row for control buttons
-        GridPane control = createTopRow(btn1, btn2, height, width);
+        GridPane control = createTopRow(btn1, btn2, height, width, label);
         
         // Create maze display box
         VBox mazeDisplay = createMazeDisplay();
@@ -58,7 +60,7 @@ public class LoskaUI extends Application {
             bt.generate();
             updateMazeDisplay(bt, mazeDisplay);           
 
-            System.out.println(m.checkMaze());
+            setLabelText(m.checkMaze(), label);
         });
  
         btn2.setOnAction(e -> {
@@ -68,7 +70,7 @@ public class LoskaUI extends Application {
             dfs.generate();
             updateMazeDisplay(dfs, mazeDisplay);           
 
-            System.out.println(m.checkMaze());
+            setLabelText(m.checkMaze(), label);
         }); 
 
         addTextBoxListeners(height, width);
@@ -97,6 +99,16 @@ public class LoskaUI extends Application {
         });
     }
 
+    private void setLabelText(boolean b, Label l) {
+        if (b) {
+            l.setText("Maze OK");
+            l.setStyle("-fx-text-fill: green;");
+        } else {
+            l.setText("Maze NOK");
+            l.setStyle("-fx-text-fill: red;");
+        }
+    }
+
 
     /**
      * Validates input values and defaults to (10,10) if not
@@ -121,7 +133,7 @@ public class LoskaUI extends Application {
         return values;
     }
 
-    public GridPane createTopRow(Button btn1, Button btn2, TextField height, TextField width) {
+    public GridPane createTopRow(Button btn1, Button btn2, TextField height, TextField width, Label label) {
         GridPane control = new GridPane();
         Text text1 = new Text("height");
         Text text2 = new Text("width");
@@ -138,12 +150,18 @@ public class LoskaUI extends Application {
         control.add(width,  1, 1, 1, 1);
         control.add(btn1, 3, 0, 2, 2);
         control.add(btn2, 5, 0, 2, 2);
+        control.add(label, 9, 0, 2, 2);
 
         control.setPadding(new Insets(50, 50, 50, 50));
         control.setAlignment(Pos.CENTER);
 
         control.setHgap(10);
         control.setVgap(10);
+
+        //label.setStyle("-fx-border-color: black;");
+        label.setPadding(new Insets(5, 5, 5, 5));
+        label.setMinWidth(80);
+        label.setAlignment(Pos.CENTER);
 
         return control;
     }
