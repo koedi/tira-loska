@@ -6,6 +6,7 @@ public class MyStack<T extends Object> {
     private T[] stackArray;
     private int top;
 
+    @SuppressWarnings("unchecked")
     public MyStack(int size) {
         this.stackSize = size;
         this.stackArray = (T[]) new Object[stackSize];

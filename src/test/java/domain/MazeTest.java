@@ -78,7 +78,7 @@ public class MazeTest {
 
     @Test
     public void testCheckMazeFalse() {
-        Maze m = new Maze(2,2);
+        Maze m = new Maze(2, 2);
         m.setCell(1, 1, '@');
         m.setCell(1, 2, '.');
         m.setCell(1, 3, '.');
@@ -91,7 +91,7 @@ public class MazeTest {
 
     @Test
     public void testCheckMazeTrue() {
-        Maze m = new Maze(2,2);
+        Maze m = new Maze(2, 2);
         m.setCell(1, 1, '@');
         m.setCell(1, 2, '.');
         m.setCell(1, 3, '.');
@@ -105,7 +105,7 @@ public class MazeTest {
 
     @Test
     public void testCheckMazeTrue2() {
-        Maze m = new Maze(2,2);
+        Maze m = new Maze(2, 2);
         m.setCell(1, 1, '@');
         m.setCell(1, 3, '.');
         m.setCell(2, 1, '.');
@@ -119,7 +119,7 @@ public class MazeTest {
 
     @Test
     public void testCheckMazeTrue3() {
-        Maze m = new Maze(2,2);
+        Maze m = new Maze(2, 2);
         m.setCell(1, 1, '@');
         m.setCell(1, 2, '.');
         m.setCell(1, 3, '.');
