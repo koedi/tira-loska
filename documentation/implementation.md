@@ -45,3 +45,5 @@ GUI is still a bit messy-ish, but this is put under low experience with JavaFX. 
 GUI scaling would have been nice and possibly another way to depict the maze. I think that is is easy to read, but there are better alternatives. At least in one of my peer reviews the maze display was excellent and much easier than I have.
 
 Maze generation / checking could be cleaner and not rely solely on the characters.
+
+Using stack instead of recursion, when generating using DFS.
