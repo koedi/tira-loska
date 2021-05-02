@@ -8,9 +8,8 @@ Peer review #2 done. Cleanup, documentation, small changes based on Peer review 
 
 | Task | Working time |
 |------|--------------|
-| Peer review #2 | 1 |
+| Peer review #2 | 1,5 |
 | Finalisation | 2 |
-| Documentation | 1 |
-| Release | 0 |
-| Total | 4 |
+| Documentation | 1,5 |
+| Total | 5 |
 
