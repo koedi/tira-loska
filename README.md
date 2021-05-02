@@ -33,4 +33,3 @@ Maze creation project done in Java
 
 [Week 6](https://github.com/koedi/tira-loska/blob/main/documentation/week6.md)
 
-[Week 7](https://github.com/koedi/tira-loska/blob/main/documentation/week7.md)
