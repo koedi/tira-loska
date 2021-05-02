@@ -44,7 +44,9 @@ public class DFS {
     }
 
     /** 
-     * Recursive method for Depth First Search 
+     * Recursive method for Depth First Search
+     * @param currentH h-coordinate for current cell
+     * @param currentW w-coordinate for current cell
      */
     private void dfs(int currentH, int currentW) {
 
@@ -92,6 +94,7 @@ public class DFS {
 
     /**
      * Shuffles an int array
+     * @param array integer array to be shuffled
      */
     private void shuffleArray(int[] array) {
         for (int i = array.length - 1; i > 0; i--) {

@@ -10,7 +10,10 @@ public class Maze {
 
     /**
      * Maze constructor.
-     * @param height, @param width. Walls are inserted around and between, hence size is (2n+1)x(2n+1)
+     * @param height maze height
+     * @param width  maze width
+     * 
+     * Walls are inserted around and between, hence size is (2n+1)x(2n+1)
      * 
      * For example 3x3 increases to 7x7
      * #######
@@ -40,7 +43,10 @@ public class Maze {
         }
     }
 
-    //Checks if maze has been generated correctly i.e. all cells are connected  
+    /** 
+     * Checks if maze has been generated correctly i.e. all cells are connected  
+     * Uses DFS to traverse whole maze. Compares visited cells to the total cell number (height x width)
+     */
     public boolean checkMaze() {
         boolean[][] visited = new boolean[this.getHeight()][this.getWidth()];
         for (int i = 0; i < this.getHeight(); i++) {
@@ -64,6 +70,7 @@ public class Maze {
             }
         }
 
+        // Check if all were visited
         if (count != this.getOrigHeight() *  this.getOrigWidth()) {
             return false;
         } else {

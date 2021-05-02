@@ -1,5 +1,9 @@
 package loska.domain;
 
+/**
+ * Cell class implementation. 
+ * Was to be used in DFS stack version
+ */
 public class Cell {
 
     private int x;

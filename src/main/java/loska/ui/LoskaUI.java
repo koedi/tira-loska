@@ -44,7 +44,7 @@ public class LoskaUI extends Application {
         // Create maze display box
         VBox mazeDisplay = createMazeDisplay();
 
-        // Create whole area
+        // Setup GUI layout
         VBox root = new VBox(control, mazeDisplay);
         Scene scene = new Scene(root, 800, 600);    
         stage.setScene(scene);
@@ -76,8 +76,8 @@ public class LoskaUI extends Application {
 
     /**
      * Adds real time input validation to height and width textboxes
-     * @param height
-     * @param width
+     * @param height allowed values [1, 100]
+     * @param width  allowed values [1, 100]
      */
     private void addTextBoxListeners(TextField height, TextField width) {
         // real time input validation

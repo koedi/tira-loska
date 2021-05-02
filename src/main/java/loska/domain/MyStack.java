@@ -1,5 +1,13 @@
 package loska.domain;
 
+/**
+ * Generic objcet stack implementation with following functionality
+ * - push(Object t)
+ * - pop(Object t)
+ * - peek()
+ * - isEmpty()
+ * - isFull();
+ */
 public class MyStack<T extends Object> {
 
     private int stackSize;

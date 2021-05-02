@@ -30,6 +30,12 @@ public class BinaryTree {
         maze.setCell(maze.getHeight() - 2, maze.getWidth() - 2, '!');
     }
     
+    /**
+     * Connects two cells between selected direction (north / west)
+     * @param h h-coordinate for the cell to be connected
+     * @param w w-coordinate for the cell to be connected
+     * @param d direction (north=0, west=1)
+     */
     public void addPath(int h, int w, int d) {
         if (d == 0) {
             checkNorth(h, w);
@@ -38,6 +44,11 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Connect cell to the north. If at top row, try to check if west if ok.
+     * @param h h-coordinate for the cell to be connected
+     * @param w w-coordinate for the cell to be connected
+     */
     public void checkNorth(int h, int w) {
         if (h == 1) {         //If at top row, only possible direction is west
             checkWest(h, w);
@@ -47,9 +58,14 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Connect cell to the west. If at top row, try to check if north if ok.
+     * @param h h-coordinate for the cell to be connected
+     * @param w w-coordinate for the cell to be connected
+     */
     public void checkWest(int h, int w) {
-        if (h == 1 && w == 1) {     //If first cell
-            return;                 //prevents infinite loop in first cell (1,1)
+        if (h == 1 && w == 1) {     //If first cell (1,1), prevent infinite loop
+            return;                 
         } else if (w == 1) {        //If at left column, only possible direction is north
             checkNorth(h, w);
         } else {
