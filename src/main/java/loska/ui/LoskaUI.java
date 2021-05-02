@@ -54,8 +54,7 @@ public class LoskaUI extends Application {
 
         // Button actions
         btn1.setOnAction(e -> {
-            int values[] = checkMazeParameters(height, width);
-            Maze m = new Maze(values[0], values[1]);
+            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
             BinaryTree bt = new BinaryTree(m);
             bt.generate();
             updateMazeDisplay(bt, mazeDisplay);           
@@ -64,8 +63,7 @@ public class LoskaUI extends Application {
         });
  
         btn2.setOnAction(e -> {
-            int values[] = checkMazeParameters(height, width);
-            Maze m = new Maze(values[0], values[1]);
+            Maze m = new Maze(Integer.parseInt(height.getText()), Integer.parseInt(width.getText()));
             DFS dfs = new DFS(m);
             dfs.generate();
             updateMazeDisplay(dfs, mazeDisplay);           
@@ -87,14 +85,19 @@ public class LoskaUI extends Application {
             if (!newValue.matches("\\d*")) {
                 height.setText("1");
             } else if (!newValue.equals("") && Integer.parseInt(newValue) > 100) {
-                height.setText(oldValue);
+                height.setText("100");
+            } else if (!newValue.equals("") && Integer.parseInt(newValue) < 1) {
+                height.setText("1");
             }
+            
         });
         width.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 width.setText("1");
             } else if (!newValue.equals("") && Integer.parseInt(newValue) > 100) {
-                width.setText(oldValue);
+                width.setText("100");
+            } else if (!newValue.equals("") && Integer.parseInt(newValue) < 1) {
+                width.setText("1");
             }
         });
     }
@@ -107,30 +110,6 @@ public class LoskaUI extends Application {
             l.setText("Maze NOK");
             l.setStyle("-fx-text-fill: red;");
         }
-    }
-
-
-    /**
-     * Validates input values and defaults to (10,10) if not
-     * @param height value to be checked
-     * @param width  value to be checked
-     * @return value is an array of two ints -- height and width
-     */
-    private int[] checkMazeParameters(TextField height, TextField width) {
-        int values[] = new int[2];
-        values[0] = 10;
-        values[1] = 10;
-        if (!height.getText().equals(""))  {
-            values[0] = Integer.parseInt(height.getText());
-        }
-        if (!width.getText().equals("")) {
-            values[1] = Integer.parseInt(width.getText());
-        }
-        
-        height.setText(String.valueOf(values[0]));
-        width.setText(String.valueOf(values[1]));
-
-        return values;
     }
 
     public GridPane createTopRow(Button btn1, Button btn2, TextField height, TextField width, Label label) {
