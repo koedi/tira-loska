@@ -90,8 +90,7 @@ public class LoskaUI extends Application {
                 height.setText("1");
             } else if (newValue.equals("")) {
                 height.setText("1");
-            }
-            
+            }            
         });
         width.textProperty().addListener((observable, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -101,9 +100,8 @@ public class LoskaUI extends Application {
             } else if (!newValue.equals("") && Integer.parseInt(newValue) < 1) {
                 width.setText("1");
             } else if (newValue.equals("")) {
-            width.setText("1");
-        }
-
+                width.setText("1");
+            }
         });
     }
 
