@@ -88,6 +88,8 @@ public class LoskaUI extends Application {
                 height.setText("100");
             } else if (!newValue.equals("") && Integer.parseInt(newValue) < 1) {
                 height.setText("1");
+            } else if (newValue.equals("")) {
+                height.setText("1");
             }
             
         });
@@ -98,7 +100,10 @@ public class LoskaUI extends Application {
                 width.setText("100");
             } else if (!newValue.equals("") && Integer.parseInt(newValue) < 1) {
                 width.setText("1");
-            }
+            } else if (newValue.equals("")) {
+            width.setText("1");
+        }
+
         });
     }
 
